@@ -2,6 +2,11 @@ from django.shortcuts import render
 import models
 # Create your views here.
 
+def index(request):
+    return render(request, 'blog/index.html', context=
+    {'welcome': 'Hello Baby'})
+
+
 def home(request):
     articles=models.Article.objects.all()
     return render(request,'blog/home.html',{ 'articles': articles })
